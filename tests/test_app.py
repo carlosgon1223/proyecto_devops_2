@@ -26,12 +26,12 @@ class TestWebApp(unittest.TestCase):
         response = self.client.get('/items')
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.data)
-        self.assertEqual(len(data['items']), 14)  # Ajustar este número según la cantidad de items insertados
+        self.assertEqual(len(data['items']), 14) 
 
     def test_crear_ordenes(self):
         response = self.client.get('/crear_orden')
         self.assertEqual(response.status_code, 200)
-        # Verificar si se crearon las órdenes correctamente, puedes hacer consultas a la base de datos aquí
+
 
 if __name__ == '__main__':
     unittest.main()
