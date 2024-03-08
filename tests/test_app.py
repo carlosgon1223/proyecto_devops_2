@@ -20,13 +20,13 @@ class TestWebApp(unittest.TestCase):
         response = self.client.get('/clientes')
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.data)
-        self.assertEqual(len(data['clientes']), 5)  # el numero de clientes insertados
+        self.assertEqual(len(data['clientes']), 10)  # el numero de clientes insertados
 
     def test_get_items(self):
         response = self.client.get('/items')
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.data)
-        self.assertEqual(len(data['items']), 14) 
+        self.assertEqual(len(data['items']), 17) 
 
     def test_crear_ordenes(self):
         response = self.client.get('/crear_orden')
